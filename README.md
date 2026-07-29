@@ -1,4 +1,4 @@
-# Counterfeit Medicine Detection System
+# Counterfeit Medicine Risk Assessment System
 
 ## Problem Statement
 
