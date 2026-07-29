@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}About - Counterfeit Medicine Detection{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>About This Project</h1>
+
+    <div class="card">
+        <h2>Problem Statement</h2>
+        <p>Counterfeit medicines are a serious global health issue.
+           This project uses machine learning to help identify
+           potentially fake medicines based on their characteristics.</p>
+    </div>
+
+    <div class="card">
+        <h2>Dataset</h2>
+        <p>Trained on 50,000 medicine records with features like
+           drug name, manufacturer, price, batch number, country,
+           and dates. Labels: Genuine (1) or Counterfeit (0).</p>
+    </div>
+
+    <div class="card">
+        <h2>Features Used</h2>
+        <table>
+            <tr><th>Feature</th><th>Why It Helps</th></tr>
+            <tr><td>Price Ratio</td><td>Counterfeits are often cheaper than average</td></tr>
+            <tr><td>Days Until Expiry</td><td>Short remaining shelf life is suspicious</td></tr>
+            <tr><td>Medicine Age</td><td>Very old medicines may indicate stock issues</td></tr>
+            <tr><td>Shelf Life</td><td>Abnormal total shelf life is a red flag</td></tr>
+            <tr><td>Batch Length</td><td>Unusual batch numbers can indicate fakes</td></tr>
+            <tr><td>Manufacturer Frequency</td><td>Rare manufacturers are riskier</td></tr>
+            <tr><td>Country Risk</td><td>Some countries have higher counterfeit rates</td></tr>
+            <tr><td>Price Per Dose</td><td>Unusual cost per mg signals counterfeits</td></tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>Tech Stack</h2>
+        <ul>
+            <li><strong>Backend:</strong> Python, Flask</li>
+            <li><strong>ML:</strong> scikit-learn (Logistic Regression, Decision Tree, Random Forest)</li>
+            <li><strong>Database:</strong> SQLite</li>
+            <li><strong>Frontend:</strong> HTML, CSS</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Limitations</h2>
+        <ul>
+            <li>This is a statistical estimate, not a laboratory test</li>
+            <li>Accuracy depends on training data quality</li>
+            <li>Should not replace professional verification</li>
+            <li>Built for educational purposes only</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

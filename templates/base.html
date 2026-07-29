@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Counterfeit Medicine Risk Assessment{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="brand">Counterfeit Medicine Risk Assessment</a>
+        <div>
+            <a href="/">Home</a>
+            <a href="/predict">Predict</a>
+            <a href="/history">History</a>
+            <a href="/about">About</a>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <div class="footer">Counterfeit Medicine Risk Assessment &copy; 2026</div>
+</body>
+
+</html>

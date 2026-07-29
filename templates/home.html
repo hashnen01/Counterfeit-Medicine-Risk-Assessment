@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Counterfeit Medicine Risk Assessment{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Counterfeit Medicine Risk Assessment</h1>
+
+    <p>
+        This system uses machine learning to estimate the counterfeit risk
+        of a medicine based on the information provided.
+    </p>
+
+    <div class="card">
+        <h2>How to Use</h2>
+
+        <ol>
+            <li>Enter the medicine details.</li>
+            <li>The details are analyzed using the trained machine learning model.</li>
+            <li>View the risk level, confidence score, and possible reasons.</li>
+        </ol>
+    </div>
+
+    <a href="/predict" class="btn">Assess Medicine</a>
+
+    <p class="disclaimer">
+        <strong>Note:</strong> This system provides a risk assessment and does
+        not confirm whether a medicine is genuine or counterfeit.
+    </p>
+</div>
+{% endblock %}
