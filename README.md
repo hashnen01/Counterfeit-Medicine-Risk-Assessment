@@ -1,105 +1,200 @@
-# Counterfeit Medicine Risk Assessment System
+# 💊 Counterfeit Medicine Risk Assessment 
 
-## Problem Statement
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![Flask](https://img.shields.io/badge/Flask-Web%20Framework-black)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-Machine%20Learning-orange)
+![SQLite](https://img.shields.io/badge/SQLite-Database-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-Counterfeit medicines are a serious global health problem. The WHO estimates
-that 1 in 10 medical products in developing countries is substandard or
-falsified. This project uses machine learning to flag potentially counterfeit
-medicines based on their characteristics.
+## 📌 Overview
 
-## Dataset
+Counterfeit medicines are a major public health concern worldwide. This project is a **Machine Learning-based web application** that estimates the likelihood of a medicine being counterfeit using observable product information such as manufacturer, batch number, price, dosage, manufacturing date, expiry date, and country.
 
-- **Records:** 50,000 medicine entries
-- **Features:** Drug name, manufacturer, batch number, country, dates, price, dosage
-- **Label:** Genuine (1) or Counterfeit (0)
-- **Source:** Synthetic dataset for academic use
+Instead of relying on manufacturer QR codes or specialized hardware, the system analyzes medicine metadata and provides:
 
-## ML Pipeline
+- Estimated Counterfeit Probability
+- Risk Level (Low / Medium / High)
+- Observed Risk Factors
+- Prediction History
+- Consumer-friendly web interface
 
+> **Note:** This project estimates counterfeit **risk** based on metadata. It does **not** laboratory-confirm or certify whether a medicine is genuine or counterfeit.
+
+---
+
+# ✨ Key Features
+
+- Predict counterfeit risk using Machine Learning
+- Feature Engineering for better prediction
+- Compare multiple ML models
+- Store prediction history using SQLite
+- Clean Flask-based web interface
+- Simple consumer-friendly workflow
+- Easy to extend with real-world datasets
+
+---
+
+# 🛠️ Tech Stack
+
+| Category | Technologies |
+|-----------|--------------|
+| Programming Language | Python |
+| Web Framework | Flask |
+| Machine Learning | Scikit-learn |
+| Data Processing | Pandas, NumPy |
+| Database | SQLite |
+| Visualization | Matplotlib |
+| Frontend | HTML, CSS |
+
+---
+
+# 🧠 Machine Learning Workflow
+
+```text
+Dataset
+     │
+     ▼
+Data Cleaning
+     │
+     ▼
+Feature Engineering
+     │
+     ▼
+Train Multiple Models
+(Logistic Regression,
+Decision Tree,
+Random Forest)
+     │
+     ▼
+Model Evaluation
+     │
+     ▼
+Best Model Selection
+     │
+     ▼
+Risk Prediction
+     │
+     ▼
+Flask Web Application
 ```
-Load CSV → Clean Data → Engineer 8 Features → Train 3 Models → Pick Best → Save counterfeit_model.pkl
-```
 
-**Models compared:**
-- Logistic Regression
-- Decision Tree
-- Random Forest
+---
 
-**Features used:**
+# 📂 Project Structure
 
-| Feature | Description |
-|---|---|
-| Price Ratio | Price vs average for that drug |
-| Days Until Expiry | Remaining shelf life |
-| Medicine Age | Days since manufacture |
-| Shelf Life | Total shelf life in days |
-| Batch Length | Length of batch number |
-| Mfr Frequency | How often manufacturer appears |
-| Country Risk | Counterfeit rate by country |
-| Price Per Dose | Price per mg of dosage |
-
-## Project Structure
-
-```
-CounterfeitMedicine/
+```text
+Counterfeit-Medicine-Risk-Assessment/
 │
-├── app.py                  — Flask routes
-├── train_model.py          — Model training
-├── predict.py              — Prediction + reasons
-├── feature_engineering.py  — Feature creation
-├── database.py             — SQLite operations
-├── eda.py                  — Exploratory data analysis
-├── config.py               — Central path configuration
-├── requirements.txt        — Dependencies
-├── README.md               — Project documentation
-├── .gitignore              — Git ignore rules
+├── app.py
+├── train_model.py
+├── predict.py
+├── feature_engineering.py
+├── generate_dataset.py
+├── eda.py
+├── database.py
+├── config.py
+├── requirements.txt
+├── README.md
 │
 ├── data/
-│   └── medicine_dataset.csv — Training dataset
-│
 ├── models/
-│   └── counterfeit_model.pkl — Trained model
-│
-├── static/
-│   └── css/
-│       └── style.css       — Application styles
-│
-├── templates/
-│   ├── base.html           — Base layout template
-│   ├── home.html           — Landing page
-│   ├── predict.html        — Assessment form
-│   ├── result.html         — Risk report
-│   ├── history.html        — Prediction log
-│   └── about.html          — Project info
-│
 ├── reports/
-│   └── eda/                — Generated charts
-│
-└── database.db             — SQLite database
+├── scripts/
+├── static/
+└── templates/
 ```
 
-## How to Run
+---
+
+# Installation
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/hashnen01/Counterfeit-Medicine-Risk-Assessment.git
+```
+
+## Navigate to the Project
+
+```bash
+cd Counterfeit-Medicine-Risk-Assessment
+```
+
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
-python eda.py            # Optional: generate EDA charts
-python train_model.py    # Train the model
-python app.py            # Start the web app
 ```
 
-Open `http://localhost:5000` in your browser.
+## Train the Model
 
-## Limitations
+```bash
+python generate_dataset.py
+python eda.py
+python train_model.py
+```
 
-- Statistical estimate, not a laboratory test
-- Accuracy depends on training data quality
-- Cannot detect physical tampering or chemical composition
-- Not a substitute for professional drug verification
-- Built for educational/academic purposes only
+## Run the Application
 
-## Future Improvements
+```bash
+python app.py
+```
 
-- Add more features (packaging quality, QR code verification)
-- Use a larger, real-world dataset
-- Deploy on a cloud platform
-- Add user authentication for the reporting system
+Open your browser and visit:
+
+```
+http://localhost:5000
+```
+
+---
+
+#  Application Screenshots
+
+> Screenshots will be added soon.
+
+- Home Page
+- Prediction Page
+- Low Risk Prediction
+- High Risk Prediction
+- Prediction History
+- About Page
+
+---
+
+# ⚠️ Limitations
+
+- Uses a synthetic dataset for demonstration purposes.
+- Estimates counterfeit **risk** rather than confirming authenticity.
+- Does not perform laboratory verification or chemical analysis.
+- Prediction quality depends on the quality of the training data.
+- Intended for educational and research purposes.
+
+---
+
+# 🔮 Future Enhancements
+
+- Support real-world pharmaceutical datasets.
+- Add QR code verification as an additional input.
+- Add packaging image analysis.
+- Integrate manufacturer verification APIs.
+- Display region-wise counterfeit trends.
+- Build an admin dashboard for report management.
+- Support continuous model retraining using verified reports.
+
+---
+
+# 👨‍💻 Author
+
+**Hashnen Belim**
+
+B.Tech Computer Science & Engineering  
+Parul University
+
+GitHub:
+https://github.com/hashnen01
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
