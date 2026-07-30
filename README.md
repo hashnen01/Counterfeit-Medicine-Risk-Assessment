@@ -150,18 +150,41 @@ http://localhost:5000
 
 #  Application Screenshots
 
-> Screenshots will be added soon.
+## Home Page
 
-- Home Page
-- Prediction Page
-- Low Risk Prediction
-- High Risk Prediction
-- Prediction History
-- About Page
+![Home Page](images/home.png)
 
 ---
 
-# ⚠️ Limitations
+##  Prediction Form
+
+![Prediction Form](images/predict.png)
+
+---
+
+##  Low Risk Prediction
+
+![Low Risk](images/low-risk-result.png)
+
+---
+
+##  High Risk Prediction
+
+![High Risk](images/high-risk-result.png)
+
+---
+
+##  Prediction History
+
+![History](images/history.png)
+
+---
+
+##  About Page
+
+![About](images/about.png)
+
+#  Limitations
 
 - Uses a synthetic dataset for demonstration purposes.
 - Estimates counterfeit **risk** rather than confirming authenticity.
